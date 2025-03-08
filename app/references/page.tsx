@@ -4,7 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Link from "next/link"
 import { FaLinkedin, FaGithub } from "react-icons/fa"
-import { BackgroundAnimation } from "../components/BackgroundAnimation"
+import { NeonMazeBackground } from "../components/NeonMazeBackground"
 import { Footer } from "../components/Footer"
 import { LanguageSwitch } from "../components/LanguageSwitch"
 import { references } from "../data"
@@ -18,11 +18,10 @@ export default function References() {
   }
 
   return (
-    <div
-      className={`min-h-screen bg-gradient-to-br from-indigo-500 to-purple-600 ${lang === "ar" ? "font-cairo" : "font-inter"}`}
-      dir={lang === "ar" ? "rtl" : "ltr"}
-    >
-      <BackgroundAnimation />
+    <div className={`min-h-screen ${lang === "ar" ? "font-cairo" : "font-inter"}`} dir={lang === "ar" ? "rtl" : "ltr"}>
+      {/* استخدام متاهة النيون كخلفية */}
+      <NeonMazeBackground primaryColor="#667eea" secondaryColor="#764ba2" opacity={0.15} />
+
       <motion.nav
         className="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg text-white p-4 sticky top-0 z-10 shadow-lg"
         initial={{ y: -100 }}
