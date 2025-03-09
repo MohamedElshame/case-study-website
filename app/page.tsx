@@ -10,6 +10,7 @@ import { CaseStudyCard } from "./components/CaseStudyCard"
 import { Footer } from "./components/Footer"
 import { LanguageSwitch } from "./components/LanguageSwitch"
 import { PageTransition } from "./components/PageTransition"
+import { AIAssistant } from "./components/AIAssistant"
 import { translations, caseStudies } from "./data"
 
 export default function Home() {
@@ -110,6 +111,9 @@ export default function Home() {
         </main>
 
         <Footer lang={lang} />
+
+        {/* إضافة المساعد الذكي */}
+        <AIAssistant lang={lang} caseStudies={posts} />
       </div>
     </PageTransition>
   )

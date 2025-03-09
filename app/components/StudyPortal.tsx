@@ -364,35 +364,29 @@ export function StudyPortal({
         exit={{ opacity: 0 }}
         onClick={handleBackdropClick}
       >
-        <canvas
-          ref={canvasRef}
-          className="absolute inset-0 cursor-pointer"
-          onClick={handlePortalClick}
-          style={{ zIndex: 60 }}
-        />
+        <canvas ref={canvasRef} className="absolute inset-0" style={{ zIndex: 60 }} />
 
         {portalPhase === "open" && (
           <motion.div
-            className="absolute z-[70] text-center cursor-pointer"
+            className="absolute z-[70] text-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.5 }}
-            onClick={handlePortalClick}
           >
             <h2 className={`text-4xl font-bold text-white mb-4 ${lang === "ar" ? "font-cairo" : "font-inter"}`}>
               {title}
             </h2>
-            <p className={`text-xl text-white ${lang === "ar" ? "font-cairo" : "font-inter"}`}>
-              {lang === "ar" ? "انقر للدخول" : "Click to Enter"}
-            </p>
+
             <motion.button
-              className={`mt-4 px-6 py-3 bg-white text-indigo-600 rounded-full font-bold hover:bg-indigo-100 transition-colors transform hover:-translate-y-1 hover:shadow-lg ${lang === "ar" ? "font-cairo" : "font-inter"}`}
+              className={`mt-4 px-8 py-4 bg-white text-indigo-600 rounded-full text-xl font-bold hover:bg-indigo-100 transition-colors transform hover:-translate-y-1 hover:shadow-xl ${lang === "ar" ? "font-cairo" : "font-inter"}`}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 }}
               onClick={handlePortalClick}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              {lang === "ar" ? "ادخل الآن" : "Enter Now"}
+              {lang === "ar" ? "ادخل البوابة" : "Enter Portal"}
             </motion.button>
           </motion.div>
         )}

@@ -9,6 +9,7 @@ import { NeonMazeBackground } from "../../components/NeonMazeBackground"
 import { Footer } from "../../components/Footer"
 import { LanguageSwitch } from "../../components/LanguageSwitch"
 import { PageTransition } from "../../components/PageTransition"
+import { AIAssistant } from "../../components/AIAssistant"
 import { translations, caseStudies } from "../../data"
 
 export default function CaseStudy() {
@@ -16,6 +17,7 @@ export default function CaseStudy() {
   const { id } = useParams()
   const t = translations[lang]
   const post = caseStudies[lang][Number(id)]
+  const allPosts = caseStudies[lang]
 
   const handleLanguageSwitch = () => {
     setLang(lang === "en" ? "ar" : "en")
@@ -142,6 +144,9 @@ export default function CaseStudy() {
         </main>
 
         <Footer lang={lang} />
+
+        {/* إضافة المساعد الذكي */}
+        <AIAssistant lang={lang} caseStudies={allPosts} />
       </div>
     </PageTransition>
   )
