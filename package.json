@@ -61,7 +61,8 @@
     "@emotion/is-prop-valid": "latest",
     "framer-motion": "latest",
     "react-icons": "latest",
-    "react-intersection-observer": "latest"
+    "react-intersection-observer": "latest",
+    "howler": "latest"
   },
   "devDependencies": {
     "@types/node": "^22",
